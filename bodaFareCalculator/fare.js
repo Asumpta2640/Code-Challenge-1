@@ -1,24 +1,31 @@
-//fare.js
-function calculateBodaFare(distanceInKm){
-    const baseFare =50;//KES
-    const chargeperKm =15;//KES per km
+function calculateBodaFare(){
+    //promp the user to enter the distance in kilometers.
+    let distanceInKmInput = prompt("Where are you headed?how far is it in kilometers?");
 
-    //calculate total fare
-    const distanceFare= distanceInKm * chargeperKm;
-    const totalFare = baseFare + distanceFare;
+    let distanceInKm = parseFloat(distanceInKmInput);
 
-    //print results
-    console.log('Uko Kwote?Io ni ${distanceInKm} Km:');
-    console.log('Ukikalia pikipiki:KES ${baseFare}');
-    console.log('mpaka Uko:KES ${distanceFare}');
-    console.log('Total:KES ${totalFare}');
-    console.log("panda pikipiki!");
+    if(isNaN(distanceInKm) || distanceInKm <=0){
+        console.log("Please enter a valid distance.");
+        return;
+    }
+
+    const basefare = 50;
+    const chargePerkm = 15;
+
+    const totalchargePerkm = chargePerkm * distanceInKm;
+
+    const totalFare = basefare + (distanceInKm * chargePerkm);
+
+    console.log(`Distance will be ${distanceInKm} km`)
+
+    console.log(`Base fare is KES ${basefare}`);
+
+    console.log(`Your trip distance will be KES ${totalchargePerkm}`);
+
+    console.log(`Your trip bill will be KES ${totalFare}`);
+
+    console.log("Get on board!");
 }
-//prompt user and call the function
-const distanceInput =prompt("Unafika wapi Mkubwa? Kilometer ngapi?:");
-const distanceInKm = Number(distanceInput);
-if (!isNaN(distanceInKm) && distanceInKm>0){
-    calculateBodaFare(distanceInKm);
-}else{
-    console.log("please enter a valid positive distance.");
-}
+
+calculateBodaFare();
+    
