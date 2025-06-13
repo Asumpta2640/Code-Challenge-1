@@ -45,6 +45,8 @@ User gain:
 
 ---
 
-## Author
+This project was developed by Jelagat Asumpta
+email:sugutasumpta@gmail.com
 
-[Asumpta2640](https://github.com/Asumpta2640)
+
+
